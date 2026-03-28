@@ -1,9 +1,11 @@
 CREATE DATABASE ShopDB;
 USE ShopDB;
-
+/*
+    Creating tables for ShopDB database
+ */
 CREATE TABLE Products (
     ID INT AUTO_INCREMENT,
-    NAME VARCHAR(50),
+    NAME VARCHAR(100),
     Description VARCHAR(100),
     Price INT,
     WarehouseAmount INT,
@@ -33,5 +35,5 @@ CREATE TABLE OrderItems (
     ProductID INT,
     PRIMARY KEY (ID),
     FOREIGN KEY (OrderID) REFERENCES Orders(ID) ON DELETE SET NULL,
-    FOREIGN KEY (ProductID) REFERENCES Products(ID) ON DELETE SET NULL
-)
+    FOREIGN KEY (ProductID) REFERENCES Products(ID) ON DELETE SET NULL -- change Products to ProductsID
+);
